@@ -8,47 +8,35 @@ const inventarioTienda = [{id : 1 , producto: "Silla" , precio: 1000} ,
                           {id : 5 , producto: "Banco", precio: 500}] ;
 const carrito = [] ;
 
-function menuCarrito(){
+//Mostrar Articululos
+inventarioLista = 0;
+articulo = 0;
+function mostrarArticulos(){
 
-    while (menu !="D"){
-        menu=prompt("A-Generar Carrito\nB-Mostrar Carrito\nC-Borrar Carrito\nD-Salir");
-        switch(menu){
-                            //Carga Carrito
-                            case "A":
-                                while(aux != "9"){
-                                    aux = prompt("1-Sillon\n2-Silla\n3-Mesa\n9-Salir");
-                                    carrito.push(inventarioTienda[aux - 1]);
-                                                
-                                            }
-                            break;
-                            //Imprimir Carrito
-                            case "B":
-                                for ( let i = 0 ; i < carrito.length - 1; i++){
-                                    alert(carrito[i]);
-                                }
-                                break;
-                                //Limpiar Carrito
-                                case "C":
-                                    carrito = [];
-                                    alert("Carrito eliminado");
-                                    break;
-                                }
-                            }
+    for (const articulo of inventarioTienda){
+        let inventarioTienda = document.createElement("div");
+        inventarioTienda.innerHTML= ` <li>${articulo.producto}  $ ${articulo.precio} </li> `
+        document.body.appendChild(inventarioTienda);
+    }
+    
 }
 
+
+
+
+//.........
 
 function agregar(){
     //Cargar
-    console.log("hola")
     aux = document.getElementById("carrito").value;
-    carrito.push(inventarioTienda[aux-1])
-     
+    carrito.push(inventarioTienda[aux-1]);
 }
 
 
-//Vaciar
+//Vaciar (No funciona)
 function vaciar(carrito){
     carrito = [];
+    
 }
 
 //Imprimir carrito

@@ -8,15 +8,12 @@
 </head>
 <body>
     <h1>Tienda</h1>
-    <li>1 - Silla</li>
-    <li>2 - Sillon</li>
-    <li>3 - Mesa</li>
-    <li>4 - Puerta</li>
-    <li>5 - Banco</li>
-   
+    <button onclick="mostrarArticulos()" class="btn">Mostrar</button>
+
     <input type="text" id="carrito"/>
     <button onclick="agregar()" class="btn">Agregar</button>
-    <button onclick="vaciar()" class="btn">Vaciar</button>
+    <button onclick="vaciar(carrito)" class="btn">Vaciar</button>
     <button onclick="print()" class="btn">Imprimir</button>
+    <div id = "inventario"></div>
 </body>
 </html>
