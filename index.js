@@ -1,3 +1,4 @@
+
 // Declaración
 let aux = 0;
 let menu = 0;
