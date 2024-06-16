@@ -4,16 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda</title>
-    <script src="index.js"></script>
 </head>
 <body>
     <h1>Tienda</h1>
-    <button onclick="mostrarArticulos()" class="btn">Mostrar</button>
+    
+    <div>
+        <h2>Silla $1000</h2>
+        <button id="btnSilla">agregar</button>
 
-    <input type="text" id="carrito"/>
-    <button onclick="agregar()" class="btn">Agregar</button>
-    <button onclick="vaciar(carrito)" class="btn">Vaciar</button>
-    <button onclick="print()" class="btn">Imprimir</button>
-    <div id = "inventario"></div>
+        <h2>Sillon $1500</h2>
+        <button id="btnSillon">agregar</button>
+
+        <h2>Mesa $2000</h2>
+        <button id="btnMesa">agregar</button>
+
+        <h2>Puerta $3500</h2>
+        <button id="btnPuerta">agregar</button>
+
+        <h2>Banco $500</h2>
+        <button id="btnBanco">agregar</button>
+    </div>
+    <div id="menuCarrito">
+        <button id="btnVerCarrito">Ver Carrito</button>
+        <button id="btnVaciar">Vaciar Carrito</button>
+    </div>
+    <div id="carritoSpace"></div>
+    <div id="totalSpace"></div>
+    
 </body>
+<script src="index.js"></script>
 </html>
