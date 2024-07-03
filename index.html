@@ -3,34 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda</title>
+    <title>Saurios Impresiones</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Margarine&display=swap" rel="stylesheet">
+    
+
 </head>
 <body>
-    <h1>Tienda</h1>
-    
-    <div>
-        <h2>Silla $1000</h2>
-        <button id="btnSilla">agregar</button>
 
-        <h2>Sillon $1500</h2>
-        <button id="btnSillon">agregar</button>
+<header class="header">
+    <h1 id="titulo">Saurios Impresiones</h1>
+</header>
 
-        <h2>Mesa $2000</h2>
-        <button id="btnMesa">agregar</button>
+<div id="contenedor-productos"></div>
 
-        <h2>Puerta $3500</h2>
-        <button id="btnPuerta">agregar</button>
+<!-- Carrito flotante -->
+<div id="carrito-flotante">
+    <button id="btnVerCarrito">
+        <span id="carrito-icon">&#128722;</span> <!-- Icono de carrito -->
+        <span id="contador-items">0</span> <!-- Contador de ítems -->
+    </button>
+</div>
 
-        <h2>Banco $500</h2>
-        <button id="btnBanco">agregar</button>
+<!-- Panel del carrito -->
+<div id="carritoItems">
+    <div id="cerrarCarrito">
+        <button id="btnCerrarCarrito">&times;</button>
     </div>
-    <div id="menuCarrito">
-        <button id="btnVerCarrito">Ver Carrito</button>
-        <button id="btnVaciar">Vaciar Carrito</button>
-    </div>
-    <div id="carritoSpace"></div>
-    <div id="totalSpace"></div>
-    
-</body>
+    <ul id="listaCarrito"></ul>
+    <p id="totalCarrito"></p>
+    <button id="btnVaciar">Vaciar Carrito</button>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 <script src="index.js"></script>
+</body>
 </html>
