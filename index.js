@@ -1,4 +1,4 @@
-// Array de productos con nombres, precios e imágenes
+//Productos
 const productos = [
     { nombre: 'Groot', precio: 15000, imagen: './images/tienda/groot.jpg' },
     { nombre: 'Lapicero', precio: 10000, imagen: './images/tienda/lapicero.jpg' },
@@ -8,16 +8,6 @@ const productos = [
     { nombre: 'Set Bob Esponja', precio: 40500, imagen: './images/tienda/set.jpg' }
 ];
 
-// Item adicional a agregar
-const nuevoProducto = { nombre: 'Lapicero', precio: 10000, imagen: './images/tienda/lapicero.jpg' };
-
-// Verificar si el producto ya existe en el arreglo
-const existeProducto = productos.some(producto => producto.nombre === nuevoProducto.nombre);
-
-// Si no existe, agregarlo al arreglo
-if (!existeProducto) {
-    productos.push(nuevoProducto);
-}
 
 // Obtener elementos del DOM
 const contenedorProductos = document.getElementById('contenedor-productos');
@@ -31,7 +21,7 @@ const contadorItems = document.getElementById('contador-items');
 
 let carrito = [];
 
-// Función para generar dinámicamente los elementos de productos
+// Función para generar productos
 function generarElementos() {
     productos.forEach((producto) => {
         const divProducto = document.createElement('div');
@@ -55,7 +45,7 @@ function generarElementos() {
     });
 }
 
-// Función para agregar un producto al carrito
+// Agregar un producto al carrito
 function agregarAlCarrito(producto) {
     const productoEnCarrito = carrito.find(item => item.nombre === producto.nombre);
 
@@ -68,7 +58,7 @@ function agregarAlCarrito(producto) {
     actualizarCarrito();
 }
 
-// Función para actualizar la visualización del carrito
+// Actualizar la visualización del carrito
 function actualizarCarrito() {
     listaCarrito.innerHTML = '';
     let total = 0;
@@ -92,7 +82,7 @@ function actualizarCarrito() {
     contadorItems.textContent = totalItems;
 }
 
-// Función para eliminar un producto del carrito
+// Eliminar un producto del carrito
 function eliminarDelCarrito(producto) {
     carrito = carrito.filter(item => item.nombre !== producto.nombre);
     actualizarCarrito();
@@ -118,7 +108,7 @@ function finalizarCompra() {
     // Calcular el total de la compra
     let totalCompra = carrito.reduce((total, producto) => total + producto.precio * producto.cantidad, 0);
 
-    // Mostrar mensaje de agradecimiento con SweetAlert
+    // SweetAlert
     Swal.fire({
         icon: 'success',
         title: '¡Gracias por su compra!',
@@ -126,7 +116,7 @@ function finalizarCompra() {
         confirmButtonText: 'Cerrar'
     });
 
-    // Vaciar el carrito después de finalizar la compra (opcional)
+    // Vaciar el carrito después de finalizar
     carrito = [];
     actualizarCarrito();
 }
@@ -139,5 +129,7 @@ carritoItems.appendChild(btnFinalizarCompra);
 
 // Llamar a la función para generar los elementos al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
-    generarElementos();
+    setTimeout(() => {
+        generarElementos();
+    }, 5000); // Demora de 5 segundos (no se cuanto seria lo optimo es mas que todo para implementarlo)
 });
